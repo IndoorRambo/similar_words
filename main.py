@@ -116,7 +116,6 @@ def get_similar(phrase):
         result.extend(generate_combinations(words))
     for i in tqdm(range(len(result))):
         result[i] = ' '.join(result[i])
-        print(result[i])
     correct = [r for r in tqdm(result) if not tool.check(r.upper()) and phrase_accent == get_accents(r)]
     return correct
 
